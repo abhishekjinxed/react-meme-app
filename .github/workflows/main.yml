@@ -3,7 +3,7 @@ name: CI
 on: 
   push:
     branches:    
-      - master 
+      - react-meme-app
 
 jobs:
   build:
