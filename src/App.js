@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
 import { Card, Button } from 'react-bootstrap';
-import React, { Component } from 'react';
 import CreateMeme from './createMeme';
 import { Route, IndexRoute } from 'react-router';
 
