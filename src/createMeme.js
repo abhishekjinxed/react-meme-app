@@ -4,7 +4,7 @@ function createMeme(props) {
   return (
     <div>
       <h1>Home{props.name}</h1>
-      <p>Homepage body content</p>
+      <p>Homepage bhi body content</p>
     </div>
   );
 }
