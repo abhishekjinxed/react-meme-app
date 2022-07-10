@@ -40,7 +40,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <CreateMeme name="aabhishek" />
+        <CreateMeme name=" aabhishek" />
         <h1> Meme Templates </h1>{' '}
         {items.map((item) => (
           <Card style={{ width: '18rem' }}>
