@@ -34,7 +34,7 @@ class App extends React.Component {
     if (!DataisLoaded)
       return (
         <div>
-          <h1> Pleses wait some time.... </h1>{' '}
+          <h1> Pleses ff wait some time.... </h1>{' '}
         </div>
       );
 
