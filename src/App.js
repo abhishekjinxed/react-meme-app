@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './style.css';
 import { Card, Button } from 'react-bootstrap';
 import CreateMeme from './createMeme';
-import { Route, IndexRoute } from 'react-router';
 
 class App extends React.Component {
   // Constructor
