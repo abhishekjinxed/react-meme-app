@@ -3,7 +3,7 @@ name: Production workflow
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
@@ -21,5 +21,5 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: 'react-app-heroku-abhishek'
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           heroku_email: 'abhishekjinxed@gmail.com'
