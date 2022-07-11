@@ -1,37 +1,23 @@
-name: CI
-
-on: 
+name: Production workflow
+on:
   push:
-    branches:    
+    branches:
       - main
-
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [14.x]
-    
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    
-    - name: npm install
-      run: |
-        npm install
-          
-    - name: npm build
-      run: |
-        npm run build --if-present
-    
-    - name: Add remote origin
-      run: |
-        git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
-    - name: Deploy to Heroku
-      run: |
-        git push heroku main
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Use Node.js 17.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 17.x
+      - run: npm install
+      - run: npm run build --if-present
+      - name: Deploy to Heroku
+        uses: abhishekjinxed/react-meme-app@fe
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: 'react-app-heroku-abhishek'
+          heroku_email: 'abhishekjinxed@@gmail.com'    
